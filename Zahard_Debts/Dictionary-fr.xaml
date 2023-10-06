@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:System="clr-namespace:System;assembly=mscorlib">
+
+    <System:String x:Key="welcome">Bienvenue!</System:String>
+    <System:String x:Key="intro1">entre nom d’utilisateur et mot de passe</System:String>
+    <System:String x:Key="user">Entre nom d’utilisateur</System:String>
+    <System:String x:Key="password">Entre mot de passe</System:String>
+    <System:String x:Key="have">Avez-vous un compte?</System:String>
+    <System:String x:Key="havent">Vous n’avez pas de compte ?</System:String>
+    <System:String x:Key="intro2">entre nom d'utilisateur et mot pass</System:String>
+    <System:String x:Key="hello">Bonjour!</System:String>
+    <System:String x:Key="log">connectez-vous</System:String>
+    <System:String x:Key="signe">s’enregistrer</System:String>
+    <System:String x:Key="show">Afficher le mot de passe</System:String>
+    <System:String x:Key="rewrite">Réécrire le mot de passe</System:String>
+
+    <!--for add and edit customer window-->
+    <System:String x:Key="name">Nom</System:String>
+    <System:String x:Key="email">Email</System:String>
+    <System:String x:Key="phone">Téléphone</System:String>
+    <System:String x:Key="total">Total des dettes</System:String>
+
+    <!--for add and edit debts window-->
+    <System:String x:Key="note">Remarque</System:String>
+    <System:String x:Key="date">Date</System:String>
+    <System:String x:Key="size">Taille</System:String>
+    <System:String x:Key="returns">retours</System:String>
+    <System:String x:Key="borrows">emprunts</System:String>
+
+    <System:String x:Key="add">Ajouter</System:String>
+    <System:String x:Key="export">Exporter</System:String>
+    <System:String x:Key="details">Détails</System:String>
+    <System:String x:Key="delete">Supprimer</System:String>
+    <System:String x:Key="edit">Modifier</System:String>
+    <System:String x:Key="customerId">ID client</System:String>
+    <System:String x:Key="debtsId">ID dettes</System:String>
+    <System:String x:Key="type">Type</System:String>
+
+
+
+
+
+</ResourceDictionary>

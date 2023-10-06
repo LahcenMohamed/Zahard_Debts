@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:System="clr-namespace:System;assembly=mscorlib">
+    <System:String x:Key="welcome">!اهلا بعودتك</System:String>
+    <System:String x:Key="intro1">ادخل اسم المستخدم وكلمة المرور لتسجيل الدخول</System:String>
+    <System:String x:Key="user">اسم المستخدم</System:String>
+    <System:String x:Key="password">كلمة المرور</System:String>
+    <System:String x:Key="have">لدي حساب بالفعل</System:String>
+    <System:String x:Key="havent">لا تملك حساب؟</System:String>
+    <System:String x:Key="intro2">ادخل اسم المستخدم وكلمة المرور لأنشاء حساب</System:String>
+    <System:String x:Key="hello">!مرحبا بك</System:String>
+    <System:String x:Key="log">تسجيل الدخول</System:String>
+    <System:String x:Key="signe">انشاء حساب</System:String>
+    <System:String x:Key="show">أظهار كلمة المرور</System:String>
+    <System:String x:Key="rewrite">اعد كتابة كلمة المرور</System:String>
+
+    <!--for add and edit customer window-->
+    <System:String x:Key="name">الاسم</System:String>
+    <System:String x:Key="email">البريد الإلكتروني</System:String>
+    <System:String x:Key="phone">رقم الهاتف</System:String>
+    <System:String x:Key="total">إجمالي الديون</System:String>
+
+    <!--for add and edit debts window-->
+    <System:String x:Key="note">ملاحظة</System:String>
+    <System:String x:Key="date">تاريخ</System:String>
+    <System:String x:Key="size">حجم</System:String>
+    <System:String x:Key="returns">إرجاع</System:String>
+    <System:String x:Key="borrows">استعارة</System:String>
+
+    <System:String x:Key="add">إضافة</System:String>
+    <System:String x:Key="export">تصدير</System:String>
+    <System:String x:Key="details">تفاصيل</System:String>
+    <System:String x:Key="delete">حذف</System:String>
+    <System:String x:Key="edit">تعديل</System:String>
+    <System:String x:Key="customerId">معرف العميل</System:String>
+    <System:String x:Key="debtsId">معرف الديون</System:String>
+    <System:String x:Key="type">النوع</System:String>
+
+
+
+
+</ResourceDictionary>

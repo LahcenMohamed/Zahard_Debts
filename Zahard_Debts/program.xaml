@@ -1,0 +1,173 @@
+﻿<Window x:Class="Zahard_Debts.program"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns:local="clr-namespace:Zahard_Debts"
+        mc:Ignorable="d"
+        Title="program" Height="600" Width="1200" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Activated="Window_Activated" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="rowgrid" Height="35"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Canvas Grid.Row="0">
+            <Button x:Name="btu_exit"  Width="35" Height="35" HorizontalAlignment="Right" materialDesign:RippleAssist.Feedback="White" Foreground="{DynamicResource PrimaryHueLightForegroundBrush}" BorderBrush="{x:Null}"   Canvas.Right="0" FlowDirection="RightToLeft" Click="btu_exit_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/exit.png"/>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="btu_max"  Width="35" Height="35" HorizontalAlignment="Right" materialDesign:RippleAssist.Feedback="White" Foreground="{DynamicResource PrimaryHueLightForegroundBrush}" BorderBrush="{x:Null}" Canvas.Right="38" Click="btu_max_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/max.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btu_min"  Width="35" Height="35" HorizontalAlignment="Right" materialDesign:RippleAssist.Feedback="White" Foreground="{DynamicResource PrimaryHueLightForegroundBrush}" BorderBrush="{x:Null}" Canvas.Right="76" Click="btu_min_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/minimize.png"/>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="btu_theme"  Width="35" Height="35" HorizontalAlignment="Right" materialDesign:RippleAssist.Feedback="White" Foreground="{DynamicResource PrimaryHueLightForegroundBrush}" BorderBrush="{x:Null}" Canvas.Right="117" Click="btu_theme_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/brightness-and-contrast.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btu_back"  Width="52" Height="44" HorizontalAlignment="Right" materialDesign:RippleAssist.Feedback="White" Foreground="{DynamicResource PrimaryHueLightForegroundBrush}" BorderBrush="{x:Null}"   Canvas.Right="0" FlowDirection="RightToLeft" Canvas.Left="1148" Canvas.Top="40" Click="btu_back_Click" Visibility="Hidden">
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/arrow.png">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform Angle="180" CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btu_theme_Copy"  Width="35" Height="35" HorizontalAlignment="Right" materialDesign:RippleAssist.Feedback="White" Foreground="{DynamicResource PrimaryHueLightForegroundBrush}" BorderBrush="{x:Null}" Canvas.Right="153"  FlowDirection="RightToLeft" Click="btu_theme_Copy_Click" >
+                <Button.Background>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/user.png"/>
+                </Button.Background>
+            </Button>
+        </Canvas>
+
+        <Canvas x:Name="can1" Grid.Row="1">
+
+            <TextBlock Width="68" Height="27" Text="Filter By:" FontSize="18" Canvas.Left="10" Canvas.Top="20" />
+            <TextBox x:Name="text_search" Width="131" Height="31"  BorderBrush="{DynamicResource MaterialDesignDivider}" FontSize="15" Canvas.Left="83" Canvas.Top="17" BorderThickness="2" TextChanged="text_search_TextChanged" />
+            <!--SelectionChanged="Datax_SelectionChanged"-->
+            <DataGrid x:Name="datax" Height="439" Canvas.Left="0"  Canvas.Top="52"  IsReadOnly="True"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ColumnWidth="*"  AutoGenerateColumns="False" Width="1200" SelectionChanged="Datax_SelectionChanged" >
+                <DataGrid.Columns>
+                    <!--Other columns Click="EditButton_Click" Click="DeleteButton_Click"-->
+                    <DataGridTextColumn Header="{DynamicResource customerId}" Binding="{Binding Customer_id}"/>
+                    <DataGridTextColumn Header="{DynamicResource name}" Binding="{Binding Customer_name}"/>
+                    <DataGridTextColumn Header="{DynamicResource email}" Binding="{Binding email}"/>
+                    <DataGridTextColumn Header="{DynamicResource phone}" Width="160.0" Binding="{Binding phone}"/>
+                    <DataGridTextColumn Header="{DynamicResource total}" Binding="{Binding total_debts}"/>
+
+
+                    <DataGridTemplateColumn Header="{DynamicResource edit}" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button   Width="30.0" HorizontalAlignment="Left" Click="Button_Click">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/edit.png"/>
+                                    </Button.Background>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{DynamicResource delete}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button   Width="30.0" HorizontalAlignment="Left" Click="DeleteButton_Click">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/delete.png"/>
+                                    </Button.Background>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="{DynamicResource details}" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="btu_detail"  Width="30.0" HorizontalAlignment="Left" Click="btu_detail_Click">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/detail.png"/>
+                                    </Button.Background>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+
+
+
+            </DataGrid>
+
+            <DataGrid x:Name="datax1" Height="439" Canvas.Left="0"  Canvas.Top="52"  IsReadOnly="True"   HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ColumnWidth="*"  AutoGenerateColumns="False" Width="1200" SelectionChanged="Datax_SelectionChanged_debts" Visibility="Hidden">
+                <DataGrid.Columns>
+                    <!--Other columns Click="EditButton_Click" Click="DeleteButton_Click"-->
+                    <DataGridTextColumn Header="{DynamicResource debtsId}" Binding="{Binding Debt_id}"/>
+                    <DataGridTextColumn Header="{DynamicResource size}" Binding="{Binding size}"/>
+                    <DataGridTextColumn Header="{DynamicResource type}" Binding="{Binding Debt_type}"/>
+                    <DataGridTextColumn Header="{DynamicResource date}" Width="160.0" Binding="{Binding Debt_date}"/>
+
+
+
+                    <DataGridTemplateColumn Header="{DynamicResource edit}" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button   Width="30.0" HorizontalAlignment="Left" Click="Button_Click1">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/edit.png"/>
+                                    </Button.Background>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{DynamicResource delete}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button   Width="30.0" HorizontalAlignment="Left" Click="DeleteButton_Click1">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/delete.png"/>
+                                    </Button.Background>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+
+
+
+            </DataGrid>
+            <Button x:Name="button_add" Width="200" Height="45" HorizontalAlignment="Left" materialDesign:ShadowAssist.ShadowDepth="Depth0"
+                    materialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="Add"
+                    Background="#FF456DFF" Foreground="White" Canvas.Left="352" Canvas.Top="510" Click="button_add_Click"  >
+
+            </Button>
+            <Button x:Name="button_add_Copy" Width="200" Height="45" HorizontalAlignment="Left" materialDesign:ShadowAssist.ShadowDepth="Depth0"
+                materialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="{DynamicResource add}"
+                Background="#FF456DFF" Foreground="White" Canvas.Left="352" Canvas.Top="510" Click="button_add_Click"  />
+            <Button x:Name="button_export" Width="200" Height="45" materialDesign:ShadowAssist.ShadowDepth="Depth0"
+                materialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Content="{DynamicResource export}"
+                Background="#FF456DFF" Foreground="White" Canvas.Left="700"  Canvas.Top="510" Click="button_export_Click"   />
+        </Canvas>
+    </Grid>
+</Window>
